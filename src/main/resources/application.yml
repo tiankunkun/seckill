@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: seckill
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/shop?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false # Ubuntu Server IP: 10.211.55.12
+    username: root
+    password: ABCabc123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: test
+    virtual-host: /test
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.hunter.seckill: debug
